@@ -1,5 +1,5 @@
 # Computer-Organization
-Computer-Organization 李毅郎
+Computer Organization 李毅郎
 
 ## Lab assignment
 >* [Lab 1: 32-bit ALU](/CO_Lab1)
