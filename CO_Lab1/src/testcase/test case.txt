@@ -1,0 +1,7 @@
+OP		 	  src1		  src2		 result		zcv
+0	AND		ffff0000	0000ffff	00000000	 4
+1	OR		3113c398	088e4954	399fcbdc	 0
+2	ADD		ffffffff	00000001	00000000	 6
+6	SUB		7eda5023	2ec36ae5	5016e53e	 2
+7	SLT		ffffffff	00000001	00000001	 0
+C	NOR		00000000	00000000	ffffffff	 0
