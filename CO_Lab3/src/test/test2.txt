@@ -1,0 +1,42 @@
+add r0,r0,r0
+addi a0,zero,4		<-f(4),改變r4的值代表 f(r4)，若設太大可能要把data memory設大一些
+addi t1,zero,1
+jal fib			<-JAL:當fib function結束後PC會跳到j final
+j final
+
+fib:
+addi sp,sp,-12		//stack pointer -12
+sw ra,0(sp)		//以下三道sw將reg存入memory中
+sw s0,4(sp)
+sw s1,8(sp)
+add s0,a0,zero
+beq s0,zero,re1		//判斷是否f(0)	
+beq s0,t1,re1		//判斷是否f(1)
+addi a0,s0,-1
+jal fib
+add s1,zero,v0
+addi a0,s0,-2
+jal fib
+add v0,v0,s1
+
+exitfib:
+lw ra,0(sp)
+lw s0,4(sp)
+lw s1,8(sp)
+addi sp,sp,12
+jr ra			//function call結束
+
+re1:
+addi v0,zero,1
+j exitfib
+
+final:
+nop
+
+
+
+
+
+
+------
+run完r2=5
